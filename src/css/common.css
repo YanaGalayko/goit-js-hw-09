@@ -73,3 +73,11 @@ button[disabled] {
   letter-spacing: 4px;
   color: #032656;
 }
+
+button[type='submit'] {
+  width: 150px;
+  height: 40px;
+  background-color: #fafafa;
+  border: solid 1px black;
+  
+} 
