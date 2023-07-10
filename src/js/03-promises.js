@@ -29,10 +29,11 @@ function onCreatePromise(e) {
   let valueStep = Number(selectors.step.value);
   let valueAmount = Number(selectors.amount.value);
 
-  for( let i = 1; i <= valueAmount; i += 1){
-    let promiseDalay = valueDelay + valueStep * i
+  for( let i = 0; i < valueAmount; i += 1){
+    const position = i + 1;
+    const delay = valueDelay + valueStep * i;
 
-    createPromise(i, promiseDalay)
+    createPromise(position, delay)
     .then(({ position, delay }) => {
       Notify.success(
         `✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -41,5 +42,6 @@ function onCreatePromise(e) {
       Notify.failure(
         `❌ Rejected promise ${position} in ${delay}ms`);
     });
+    console.log(position, delay);
   }
 }
